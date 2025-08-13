@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>M-Store | متجر شحن الألعاب</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--dark:#1b1f2a;--muted:#64748b;--blue:#1e67ff;--radius:16px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Tajawal,Segoe UI,Arial,sans-serif;background:var(--bg);color:#111;text-align:center}
+    header{background:linear-gradient(135deg,#0f1c4d,#2155ff);color:#fff;padding:20px}
+    header h1{margin:0;font-size:24px}
+    header .sub{opacity:.95;margin-top:6px}
+    .wrap{max-width:1100px;margin:20px auto;padding:0 12px}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .game{background:var(--card);border-radius:var(--radius);box-shadow:0 10px 24px rgba(0,0,0,.06);padding:16px;text-align:center}
+    .circle{width:150px;height:150px;margin:8px auto 12px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 8px 18px rgba(0,0,0,.12)}
+    .circle img{width:100%;height:100%;object-fit:cover}
+    .game h3{margin:6px 0 2px;color:#1e67ff}
+    .hint{margin:0;color:var(--muted);font-size:13px}
+    table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:12px}
+    th,td{padding:10px 12px;text-align:right}
+    thead th{color:#374151}
+    tbody tr{background:#fff;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+    tbody tr td:first-child{border-radius:12px 0 0 12px}
+    tbody tr td:last-child{border-radius:0 12px 12px 0}
+    .price{font-weight:700}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:7px 10px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px}
+    .btn img{width:18px;height:18px}
+    .accent-pubg tbody tr{background:#fff7ee}
+    .accent-ff   tbody tr{background:#efe9ff}
+    .accent-pes  tbody tr{background:#eafbea}
+    footer{background:#fff;margin-top:26px;padding:18px 12px;border-top:1px solid #eef1f5}
+    .legal{max-width:900px;margin:0 auto;text-align:right}
+    .legal h3{margin:4px 0 8px}
+    .legal p{color:#374151;line-height:1.8;margin:6px 0}
+    .numbers{color:#111;margin-top:10px}
+    .numbers b{color:#0c2}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 M-Store | متجر شحن الألعاب</h1>
+  <div class="sub">شحن PUBG • Free Fire • eFootball بسرعة وأمان | واتساب: <b>01153001883</b></div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- Free Fire -->
+    <section class="game accent-ff" id="freefire">
+      <div class="circle"><img src="freefire.jpg"alt="Free Fire"></div>
+      <h3>Free Fire</h3>
+      <p class="hint">شحن جواهر عبر ID — الدفع فودافون كاش / اتصالات كاش</p>
+      <table>
+        <thead><tr><th>الباقة</th><th>السعر + الطلب</th></tr></thead>
+        <tbody id="ff-rows"></tbody>
+      </table>
+    </section>
+
+    <!-- PUBG -->
+    <section class="game accent-pubg" id="pubg">
+      <div class="circle"><img src="pubg.jpg"alt="PUBG Mobile"></div>
+      <h3>PUBG Mobile</h3>
+      <p class="hint">شحن UC عبر ID — الدفع فودافون كاش / اتصالات كاش</p>
+      <table>
+        <thead><tr><th>الباقة</th><th>السعر + الطلب</th></tr></thead>
+        <tbody id="pubg-rows"></tbody>
+      </table>
+    </section>
+
+    <!-- eFootball / PES -->
+    <section class="game accent-pes" id="pes">
+      <div class="circle"><img src="pes.jpg"alt="eFootball (PES)"></div>
+      <h3>eFootball (PES)</h3>
+      <p class="hint">شراء الكوينز بالتنسيق على واتساب — تسليم سريع</p>
+      <table>
+        <thead><tr><th>الباقة</th><th>السعر + الطلب</th></tr></thead>
+        <tbody id="pes-rows"></tbody>
+      </table>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="legal">
+    <h3>الشروط والأحكام</h3>
+    <p>باستخدامك للموقع فأنت توافق على: (1) إدخال بيانات صحيحة (ID/الاسم ورقم التواصل)؛ (2) إرسال لقطة شاشة لإثبات الدفع؛
+       (3) مدة تنفيذ الطلب عادة من 5 دقائق إلى 60 دقيقة وقد تزيد في الضغط؛ (4) عدم استرجاع المبلغ بعد الشحن داخل اللعبة؛
+       (5) يتحمل العميل مسؤولية أي خطأ في الـ ID أو البيانات.</p>
+    <p class="numbers">محافظ الدفع: فودافون كاش <b>01024627591</b> — اتصالات كاش <b>01153001883</b>.</p>
+
+    <h3>سياسة الخصوصية</h3>
+    <p>نحن لا نجمع إلا البيانات اللازمة لإتمام الطلب (ID اللعبة/رقم الهاتف/صورة إثبات الدفع). لا نشارك بياناتك مع أي طرف ثالث،
+       ونحتفظ بها بشكل آمن لأغراض الدعم والمحاسبة. يمكنك طلب حذف بياناتك بعد إتمام الطلب عبر مراسلتنا على واتساب.</p>
+
+    <p style="text-align:center;color:#6b7280;margin-top:12px">© 2025 M-Store — جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script>
+  // رقم الواتساب (صيغة دولية بدون 0)
+  const WA = "201153001883";
+  const WA_ICON = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
+
+  // بيانات الأسعار
+  const ffData = [
+    ["50 جوهرة",  "30 جنيه"],
+    ["100 جوهرة", "60 جنيه"],
+    ["210 جوهرة", "110 جنيه"],
+    ["310 جوهرة", "160 جنيه"],
+    ["520 جوهرة", "260 جنيه"],
+    ["1060 جوهرة","510 جنيه"],
+    ["2200 جوهرة","1010 جنيه"],
+  ];
+  const pubgData = [
+    ["30 UC",  "25 جنيه"],
+    ["60 UC",  "50 جنيه"],
+    ["120 UC", "100 جنيه"],
+    ["325 UC", "230 جنيه"],
+    ["660 UC", "455 جنيه"],
+  ];
+  const pesData = [
+    ["130 كوينز",  "80 جنيه"],
+    ["300 كوينز",  "160 جنيه"],
+    ["550 كوينز",  "260 جنيه"],
+    ["750 كوينز",  "360 جنيه"],
+    ["1040 كوينز", "470 جنيه"],
+    ["1500 كوينز", "700 جنيه"],
+    ["1800 كوينز", "840 جنيه"],
+    ["2130 كوينز", "930 جنيه"],
+    ["3250 كوينز", "1400 جنيه"],
+    ["5700 كوينز", "2300 جنيه"],
+    ["6000 كوينز", "2450 جنيه"],
+    ["12800 كوينز","4700 جنيه"],
+  ];
+
+  function addRows(tbodyId, gameName, data){
+    const tb = document.getElementById(tbodyId);
+    tb.innerHTML = "";
+    data.forEach(([pack, price])=>{
+      const tr = document.createElement('tr');
+
+      const tdPack = document.createElement('td');
+      tdPack.textContent = pack;
+
+      const tdPrice = document.createElement('td');
+      const strong = document.createElement('span');
+      strong.className = "price";
+      strong.textContent = price + " ";
+      tdPrice.appendChild(strong);
+
+      const a = document.createElement('a');
+      a.className = "btn";
+      const msg = `اريد ${pack} ${gameName} | من موقع M-Store | من فضلك ابعتلي بيانات الدفع.`;
+      a.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+      const icon = document.createElement('img');
+      icon.src = WA_ICON; icon.alt = "واتساب";
+      a.appendChild(icon);
+      a.appendChild(document.createTextNode("اطلب الآن"));
+
+      tdPrice.appendChild(document.createElement('br'));
+      tdPrice.appendChild(a);
+
+      tr.appendChild(tdPack);
+      tr.appendChild(tdPrice);
+      tb.appendChild(tr);
+    });
+  }
+
+  addRows("ff-rows","Free Fire",ffData);
+  addRows("pubg-rows","PUBG Mobile",pubgData);
+  addRows("pes-rows","eFootball (PES)",pesData);
+</script>
+
+</body>
+</html>
